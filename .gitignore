@@ -1,0 +1,24 @@
+# Public repo: never commit local state, caches, secrets or build output.
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+.pytest_cache/
+.DS_Store
+.claude/
+node_modules/
+dist/
+.env*
+
+# data/private/ holds all local product state (portfolio, runs, decisions,
+# drafts, archive) and must never be committed
+data/private/
+briefings/
+
+# fetched call caches; only the placeholder is tracked
+data/raw/*
+!data/raw/.gitkeep
+
+# media
+demo/
+*.mp4

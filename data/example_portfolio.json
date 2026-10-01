@@ -1,0 +1,56 @@
+[
+  {
+    "id": "3f9c1a7e5b20",
+    "component": "topics_trajectory",
+    "claim": "Metabolic health research on type 2 diabetes and prediabetes in primary care",
+    "source": "CV",
+    "confidence": "confirmed",
+    "visibility": "private",
+    "included": true
+  },
+  {
+    "id": "8d2e4b6a0c13",
+    "component": "methods",
+    "claim": "Continuous glucose monitors and wearable activity sensors to quantify glycaemic variability as digital biomarkers of disease progression",
+    "source": "Methods paper",
+    "confidence": "confirmed",
+    "visibility": "private",
+    "included": true
+  },
+  {
+    "id": "c47a9e1f2d86",
+    "component": "software",
+    "claim": "Open-source Python toolkit for real-time glucose forecasting from continuous glucose monitor data",
+    "source": "Code repository",
+    "confidence": "confirmed",
+    "visibility": "private",
+    "included": true
+  },
+  {
+    "id": "5b0d3c8f7a41",
+    "component": "preliminary_findings",
+    "claim": "Pilot study in 24 patients: glycaemic variability from continuous glucose monitors tracked treatment response to metformin over six months",
+    "source": "Pilot-study preprint",
+    "confidence": "confirmed",
+    "visibility": "private",
+    "included": true
+  },
+  {
+    "id": "e6f12a9b4c07",
+    "component": "populations_access",
+    "claim": "Access to a longitudinal type 2 diabetes cohort at a partner clinic",
+    "source": "Invented example - inferred from co-authored papers, never agreed with the clinic; confirm or exclude",
+    "confidence": "inferred",
+    "visibility": "private",
+    "included": true
+  },
+  {
+    "id": "9a7b5d3e1f62",
+    "component": "topics_trajectory",
+    "claim": "Gut microbiome studies in metabolic disease",
+    "source": "Invented example - as if imported from a publication profile; confirm or exclude",
+    "confidence": "inferred",
+    "visibility": "private",
+    "included": true
+  }
+]

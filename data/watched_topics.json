@@ -1,0 +1,6 @@
+{
+  "_comment": "EU Horizon Europe topics the feed scores alongside the German notices the watch loop discovers. Codes resolve live against the EU Funding & Tenders portal (SEDIA). This starter topic matches data/example_portfolio.json; add or remove codes freely.",
+  "topic_codes": [
+    "HORIZON-HLTH-2027-02-TOOL-01-two-stage"
+  ]
+}

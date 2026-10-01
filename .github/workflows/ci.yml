@@ -1,0 +1,34 @@
+name: CI
+on: [push, pull_request]
+permissions:
+  contents: read
+
+# Offline by design: no Ollama, no secrets; only package downloads touch the network.
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      # Pinned to the uv that wrote uv.lock; bump it whenever uv.lock is regenerated with a newer uv.
+      - uses: astral-sh/setup-uv@v10.2.0
+        with:
+          version: '0.11.7'
+      - run: uv sync --locked
+      - run: uv run pytest -q
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v7
+      # web/package.json requires Node >= 22.12 (npm test uses --experimental-strip-types).
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm test
+      - run: npm run build

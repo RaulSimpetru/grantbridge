@@ -1,0 +1,56 @@
+[project]
+name = "grantbridge"
+version = "0.1.0"
+description = "A long-running funding agent that watches German and EU calls and drafts grounded project concepts on a local model"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [
+    { name = "Raul C. Sîmpetru", email = "raul.simpetru@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "requests>=2.32",
+    "bm25s>=0.2",
+    "numpy>=2.0",
+    "pydantic>=2",
+    # zoneinfo needs IANA data, which Windows and slim Linux images lack.
+    "tzdata>=2024.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "ruff>=0.8",
+    "httpx>=0.27",
+]
+api = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+]
+tui = [
+    # xnano runs the terminal workspace (app.py), textual the review panel (tui.py)
+    "xnano>=1.2.3",
+    "textual>=0.80",
+]
+
+[tool.uv]
+# plain `uv sync` installs the API, both terminal UIs and the test tools
+default-groups = ["dev", "api", "tui"]
+
+[tool.uv.build-backend]
+module-name = "grant_recommender"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "tab"
+docstring-code-format = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["uv_build>=0.11.7,<0.12.0"]
+build-backend = "uv_build"

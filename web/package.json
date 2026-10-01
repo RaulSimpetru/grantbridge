@@ -1,0 +1,37 @@
+{
+  "name": "grantbridge-web",
+  "private": true,
+  "version": "0.1.0",
+  "description": "React UI for GrantBridge, a local, evidence-grounded funding agent",
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173 --strictPort",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "format": "prettier --write src tests",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "preview": "vite preview --host 127.0.0.1 --port 5173 --strictPort"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 100
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.1.0",
+    "oxlint": "^1.79.0",
+    "prettier": "3.9.9",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.2"
+  }
+}
